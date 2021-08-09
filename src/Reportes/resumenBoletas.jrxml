@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="37922528-bf99-4f4a-ba49-9d1bb5c5cbb9">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     boleta.`num_bol` AS boleta_num_bol,
+     boleta.`nomape` AS boleta_nomape,
+     boleta.`pre_tot` AS boleta_pre_tot,
+     boleta.`fecha` AS boleta_fecha,
+     detalleboleta.`cod_pro` AS detalleboleta_cod_pro,
+     detalleboleta.`des_pro` AS detalleboleta_des_pro,
+     detalleboleta.`cant_pro` AS detalleboleta_cant_pro,
+     detalleboleta.`pre_unit` AS detalleboleta_pre_unit,
+     detalleboleta.`pre_venta` AS detalleboleta_pre_venta,
+     detalleboleta.`tipo` AS detalleboleta_tipo
+FROM
+     `boleta` boleta INNER JOIN `detalleboleta` detalleboleta ON boleta.`num_bol` = detalleboleta.`num_bol`]]>
+	</queryString>
+	<field name="boleta_num_bol" class="java.lang.String"/>
+	<field name="boleta_nomape" class="java.lang.String"/>
+	<field name="boleta_pre_tot" class="java.lang.Double"/>
+	<field name="boleta_fecha" class="java.lang.String"/>
+	<field name="detalleboleta_cod_pro" class="java.lang.String"/>
+	<field name="detalleboleta_des_pro" class="java.lang.String"/>
+	<field name="detalleboleta_cant_pro" class="java.lang.String"/>
+	<field name="detalleboleta_pre_unit" class="java.lang.String"/>
+	<field name="detalleboleta_pre_venta" class="java.lang.Double"/>
+	<field name="detalleboleta_tipo" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="110" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="2" width="802" height="108" uuid="14fbaed7-9f19-4559-b813-62b713fecf3c"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="215" y="2" width="386" height="61" uuid="bd4f2781-d3ac-4c1b-b7ae-852baeeca90f"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="258" y="2" width="318" height="34" uuid="893397e1-19b3-4e7d-b66a-3f4ca51e1881"/>
+				<textElement>
+					<font size="22" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REPORTE DE BOLETAS]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="350" y="90" width="80" height="20" uuid="7c96836d-309a-4cf5-a1d3-d2f47312fe28"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="430" y="90" width="40" height="20" uuid="82b50836-8aaf-4d27-a862-64c250c297e4"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="11" y="90" width="100" height="20" uuid="7297d622-8b74-4532-97f9-346b160cf654"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="32" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="802" height="30" backcolor="#CCCCCC" uuid="32584a14-57e4-4355-96de-1487c1b5d8af"/>
+			</rectangle>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="28" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="802" height="26" uuid="ba706031-682e-4690-8c8e-f814ef9a0cd2"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="11" y="8" width="81" height="20" uuid="f9ab8176-d424-4770-aff6-66d15e1665cc"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Num. Boleta]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="92" y="6" width="123" height="20" uuid="86bf4cb4-6367-4fe0-826a-1e346ef3bb97"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre y Apellido]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="215" y="6" width="88" height="20" uuid="79c26283-8ede-4e54-9904-ef6f7aa10e61"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="303" y="6" width="155" height="20" uuid="4d32e5c9-c422-4c14-8715-6fe2f2c26656"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Descripcion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="470" y="8" width="82" height="20" uuid="e3a80ab2-7e66-4f90-8e6a-885a34984ca8"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Precio unidad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="557" y="8" width="89" height="20" uuid="3c302cfe-7db7-4c1d-92d2-d7485e048616"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Precio de venta]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="646" y="8" width="85" height="20" uuid="657bbed7-4119-46b5-a951-bd350b45f0a2"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="731" y="6" width="71" height="20" uuid="1cb23283-a276-4ea6-b1b7-f8b7d16b587d"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Mesa]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="11" y="0" width="81" height="20" uuid="acb4031c-5581-43e1-a035-abec1bf1b037"/>
+				<textFieldExpression><![CDATA[$F{boleta_num_bol}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="92" y="0" width="123" height="20" uuid="f0a7f434-c9d9-495d-afab-04d66bf6d82b"/>
+				<textFieldExpression><![CDATA[$F{boleta_nomape}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="215" y="0" width="88" height="20" uuid="983d1346-1954-42ce-8396-b419054e503f"/>
+				<textFieldExpression><![CDATA[$F{boleta_fecha}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="303" y="0" width="155" height="20" uuid="75cd804a-148b-435d-a1e5-095e2b6c5e43"/>
+				<textFieldExpression><![CDATA[$F{detalleboleta_des_pro}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="470" y="0" width="82" height="20" uuid="dbd05ee8-45b0-43c3-b5e1-6310913a612e"/>
+				<textFieldExpression><![CDATA[$F{detalleboleta_pre_unit}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="557" y="0" width="89" height="20" uuid="856142b1-73b9-405d-aa38-a36c720f28b6"/>
+				<textFieldExpression><![CDATA[$F{detalleboleta_pre_venta}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="646" y="0" width="85" height="20" uuid="eeb5bd91-a652-4c04-9f66-c705a83766c3"/>
+				<textFieldExpression><![CDATA[$F{boleta_pre_tot}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="731" y="0" width="71" height="20" uuid="d7673790-49bf-4f5d-9389-072fb7924ba1"/>
+				<textFieldExpression><![CDATA[$F{detalleboleta_tipo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="3" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="66" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="802" height="64" uuid="f36fc063-ea62-46ab-a407-7512babd36fe"/>
+			</rectangle>
+			<textField evaluationTime="Report">
+				<reportElement x="458" y="13" width="40" height="20" uuid="2d6a7e97-0481-493a-8e52-42cee7abb459"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="378" y="13" width="80" height="20" uuid="b90585da-428e-4740-b073-d0793c68232a"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

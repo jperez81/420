@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="161" pageHeight="841" columnWidth="121" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="60211462-0f09-4778-9b99-abc69598a5ea">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="num" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     comanda.`id` AS comanda_id,
+     comanda.`mesa` AS comanda_mesa,
+     comanda.`atendido` AS comanda_atendido,
+     comanda.`p1` AS comanda_p1,
+     comanda.`p2` AS comanda_p2,
+     comanda.`p3` AS comanda_p3,
+     comanda.`p4` AS comanda_p4,
+     comanda.`p5` AS comanda_p5,
+     comanda.`p6` AS comanda_p6,
+     comanda.`p7` AS comanda_p7,
+     comanda.`p8` AS comanda_p8,
+     comanda.`p9` AS comanda_p9,
+     comanda.`p10` AS comanda_p10,
+     comanda.`p11` AS comanda_p11
+FROM
+     `comanda` comanda
+WHERE
+	comanda.id =$P{num}]]>
+	</queryString>
+	<field name="comanda_id" class="java.lang.String"/>
+	<field name="comanda_mesa" class="java.lang.String"/>
+	<field name="comanda_atendido" class="java.lang.String"/>
+	<field name="comanda_p1" class="java.lang.String"/>
+	<field name="comanda_p2" class="java.lang.String"/>
+	<field name="comanda_p3" class="java.lang.String"/>
+	<field name="comanda_p4" class="java.lang.String"/>
+	<field name="comanda_p5" class="java.lang.String"/>
+	<field name="comanda_p6" class="java.lang.String"/>
+	<field name="comanda_p7" class="java.lang.String"/>
+	<field name="comanda_p8" class="java.lang.String"/>
+	<field name="comanda_p9" class="java.lang.String"/>
+	<field name="comanda_p10" class="java.lang.String"/>
+	<field name="comanda_p11" class="java.lang.String"/>
+	<title>
+		<band height="58" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="120" height="58" uuid="d02bd9d7-d474-43e6-bd2c-8025216dedb2"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="41" y="11" width="43" height="20" uuid="32f086fe-d65a-4abb-b371-d9dbc9093480"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[420]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="0" width="30" height="11" uuid="513c83c3-49cb-4c63-a339-c165320db735"/>
+				<textElement>
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[N° :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="34" y="0" width="28" height="11" uuid="9bcbe8d9-f1cf-49ce-a44d-bdd13ec8dd2a"/>
+				<textElement>
+					<font size="7" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{comanda_id}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="63" y="41" width="58" height="17" uuid="db4661c9-705e-4b22-8b84-b7452227aad1"/>
+				<textElement>
+					<font size="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="48" splitType="Stretch">
+			<textField>
+				<reportElement x="4" y="0" width="37" height="0" uuid="c0c32ec4-5e59-4e27-8d18-9b3a02ffb0d7"/>
+				<textElement>
+					<font size="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{comanda_atendido}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="57" y="10" width="42" height="11" uuid="a0e41a1e-a720-49cb-adb4-ad6da13f7c9e"/>
+				<textElement>
+					<font size="6" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{comanda_atendido}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="57" y="33" width="60" height="15" uuid="43b1ea5d-b63a-4617-98df-f394f9e83882"/>
+				<textElement>
+					<font size="6" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{comanda_mesa}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="4" y="33" width="53" height="15" uuid="e4568571-4aac-49c8-a4d9-470243b72b0e"/>
+				<textElement>
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Mesa:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="10" width="46" height="11" uuid="15b73cd2-4d97-4ecf-b409-e3fed4e068cb"/>
+				<textElement>
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Atiende:]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="16" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="121" height="16" uuid="a2b02ce2-6548-4310-9dd0-f66de1f677be"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="4" y="5" width="63" height="11" uuid="337add80-98ef-46bf-9eba-19bb5d659162"/>
+				<textElement>
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Descripcion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="91" y="5" width="20" height="11" uuid="fe9f169e-2b10-4784-b9cf-bc7fb1630db2"/>
+				<textElement>
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[$]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="67" y="5" width="24" height="11" uuid="17fc1f98-a752-4745-a178-c9996aa722f7"/>
+				<textElement>
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cant.]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="137" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="121" height="132" uuid="9931179e-c600-44d3-a98e-64aa083095ce"/>
+			</rectangle>
+			<textField>
+				<reportElement x="4" y="0" width="53" height="9" uuid="4fdd7d7a-0080-4f14-9775-09695bff43a6"/>
+				<textElement>
+					<font size="6" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{comanda_p1}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="8" width="121" height="1" uuid="f4becd27-05f5-4cd2-8e1d-54b972fffb11"/>
+			</line>
+			<textField>
+				<reportElement x="4" y="9" width="53" height="10" uuid="2ebe4932-4048-4372-9c77-f3678c5a4eb6"/>
+				<textElement>
+					<font size="6" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{comanda_p2}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="19" width="121" height="1" uuid="72efbacf-25c0-4253-90bc-06bc6f6f46d2"/>
+			</line>
+			<textField>
+				<reportElement x="4" y="20" width="53" height="10" uuid="03886f72-023f-42f5-a5a5-181787f806be"/>
+				<textElement>
+					<font size="6" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{comanda_p3}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="30" width="121" height="1" uuid="d79485c3-84b9-42be-9777-5d51e5d752b4"/>
+			</line>
+			<textField>
+				<reportElement x="4" y="31" width="53" height="10" uuid="5c2b0aa6-685a-417d-b244-fff0c804c7fd"/>
+				<textElement>
+					<font size="6" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{comanda_p4}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="41" width="121" height="1" uuid="44c6c71c-29ab-4fad-903c-39c7b5efa441"/>
+			</line>
+			<textField>
+				<reportElement x="4" y="42" width="53" height="11" uuid="1346c80e-4f73-4230-9a70-648b201cd624"/>
+				<textElement>
+					<font size="6" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{comanda_p5}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="1" y="53" width="120" height="1" uuid="a831a11a-8f3c-4cdc-b4b6-248917ef709a"/>
+			</line>
+			<textField>
+				<reportElement x="4" y="53" width="53" height="11" uuid="fbec5e5d-93fb-4a7b-b304-02aeac5fd88d"/>
+				<textElement>
+					<font size="6" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{comanda_p6}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="1" y="64" width="120" height="1" uuid="03ca4aad-d7ad-468e-a854-344b01edd635"/>
+			</line>
+			<textField>
+				<reportElement x="4" y="65" width="53" height="11" uuid="f96cb91f-1faf-4efc-bb0d-fab3645fed25"/>
+				<textElement>
+					<font size="6" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{comanda_p7}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="1" y="76" width="120" height="1" uuid="425f7c10-0804-49c0-9a06-c3812bdb4c1d"/>
+			</line>
+			<textField>
+				<reportElement x="4" y="77" width="53" height="11" uuid="531c01ed-8251-40c0-9ee0-888290c8df55"/>
+				<textElement>
+					<font size="6" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{comanda_p8}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="1" y="88" width="120" height="1" uuid="1ad3a054-6d52-40e6-9ab6-ebd59271cbce"/>
+			</line>
+			<textField>
+				<reportElement x="4" y="89" width="53" height="10" uuid="700f9523-ae87-4997-8a73-314f37c5e85b"/>
+				<textElement>
+					<font size="6" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{comanda_p9}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="1" y="99" width="120" height="1" uuid="d1256764-9002-4b3a-8b09-954c55cf2a38"/>
+			</line>
+			<textField>
+				<reportElement x="4" y="100" width="53" height="10" uuid="b9531f3d-1fad-49f3-8f79-5c7de8dae300"/>
+				<textElement>
+					<font size="6" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{comanda_p10}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="1" y="110" width="120" height="1" uuid="739588de-6209-4ff8-bf24-3a7a9ec130e7"/>
+			</line>
+			<textField>
+				<reportElement x="4" y="111" width="53" height="10" uuid="0a7058de-2265-45b2-ab54-241bf375bbf0"/>
+				<textElement>
+					<font size="6" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{comanda_p11}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="1" y="121" width="120" height="1" uuid="eb7bb082-d6b9-4826-928a-28b4163898ab"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="55">
+			<rectangle>
+				<reportElement x="0" y="0" width="121" height="54" uuid="92bf4d04-27f0-4b00-ae64-d1468aa75bfb"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="3" y="0" width="37" height="12" uuid="d9cb651d-f278-4c9e-b632-871bdbaf0da3"/>
+				<textElement>
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[OTROS: ]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="17" width="120" height="1" uuid="337fef50-ad77-4b95-85d1-e281559025a6"/>
+			</line>
+			<line>
+				<reportElement x="0" y="32" width="120" height="1" uuid="d2ec1944-b4bc-48bb-8ecd-ce9439c56dae"/>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+</jasperReport>
