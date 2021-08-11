@@ -1,1 +1,1 @@
-Este es una subida a git ya de un programa funcionando
+Este es una subida a git ya de un programa funcionando, actualizacion desde GitHub como prueba
